@@ -1,0 +1,23 @@
+const int pinD1 = 2;  // Digital input pin
+const int pinD3 = 3;  // Digital output pin
+const int pinD4 = 4;  // Digital output pin
+
+void setup() {
+  // Initialize pins
+  pinMode(pinD1, INPUT);
+  pinMode(pinD3, OUTPUT);
+  pinMode(pinD4, OUTPUT);
+}
+
+void loop() {
+  // Read input from pinD1
+  int inputVal = digitalRead(pinD1);
+
+  // Write inputVal to pinD3 (LED or output)
+  digitalWrite(pinD3, inputVal);
+
+  // Write the inverse to pinD4
+  digitalWrite(pinD4, !inputVal);
+
+  delay(100);  
+}
